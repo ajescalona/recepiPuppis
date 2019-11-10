@@ -1,0 +1,66 @@
+<ion-content>
+  <ion-img src="./assets/img/dummy/dummy-header.png" alt="" class="blog-img"></ion-img>
+
+  <ion-grid>
+
+    <div class="wrapper">
+      <!--header-->
+      <ion-row class="blog-header-row">
+        <ion-col class="blog-header">
+          <h1 class="blog-title">RECIPE PUPPY</h1>
+        </ion-col>
+      </ion-row>
+      <!--END OF header-->
+
+      <ion-row class="blog-search-row">
+        <ion-col class="blog-search">
+
+          <form [formGroup]="searchForm">
+
+            <ion-input #textSearchInput mode="md" type="text" placeholder="Buscar recetas."
+              class="form-text form-text-type2" formControlName="searchText" [(ngModel)]="searchText"></ion-input>
+          </form>
+
+          <ion-button fill="clear" class="btn-search" (click)="toggleFilter();">
+            <span *ngIf="!showList">
+              <ion-icon class="icon-search" name="search"></ion-icon>
+            </span>
+            <span *ngIf="showList">
+              <ion-icon class="icon-close" name="close"></ion-icon>
+            </span>
+          </ion-button>
+
+          <!--search-results-->
+          <div class="blog-search-results" *ngIf="showList">
+
+            <h2 class="search-results-title" *ngIf="recepi.length > 0">Artículos que contienen
+              <strong>{{searchText}}</strong>:</h2>
+            <h2 class="search-results-title" *ngIf="recepi.length === 0">No se han encontrado resultados</h2>
+            <!--Show this text if no results-->
+
+          </div>
+          <!--END OF search-results-->
+        </ion-col>
+      </ion-row>
+
+      <div class="blog-list">
+        <ion-list class="search-results-list">
+          <ng-container *ngFor="let b of recepi">
+            <ion-item lines="full">
+              <ion-avatar>
+                <ion-img [src]="b.thumbnail" alt=""></ion-img>
+              </ion-avatar>
+              <ion-label text-wrap>
+                <h3 class="blog-results-title">{{b.title}}</h3>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+      </div>
+    </div>
+    <!-- END OF wrapper -->
+
+
+  </ion-grid>
+
+</ion-content>

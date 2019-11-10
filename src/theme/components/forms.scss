@@ -1,0 +1,28 @@
+
+.form-text {
+  font-size: 16px;
+  color: var(--ion-text-color);
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  --padding-start: 0;
+  --placeholder-opacity: 1;
+  --placeholder-color: var(--ion-text-color);
+  transition: all .3s ease;
+}
+
+.form-text-type2 {
+  border: 1px solid var(--ion-gray-border);
+  border-radius: 2px;
+  height: 40px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  &.has-focus {
+    --placeholder-opacity: 0;
+  }
+}
+
+.form-text-type3 {
+  height: 55px;
+  --placeholder-color: var(--ion-color-gray1);
+}

@@ -1,0 +1,64 @@
+html {
+  --ion-safe-area-top: 80px;
+}
+
+body {
+  color: var(--ion-text-color);
+}
+
+* {
+  outline: none;
+}
+
+.main-content {
+  --padding-bottom: 105px;
+  --padding-top: 60px;
+  &.no-footer {
+    --padding-bottom: 0;
+  }
+  &.main-grid-total {
+    --padding-bottom: 0;
+  }
+  &.main-content-faqs, &.main-content-notifications {
+    --padding-top: 20px;
+  }
+  ion-grid {
+    padding: 0 10px;
+    &.grid-top {
+      padding-top: 20px;
+    }
+    &.grid-total {
+      height: calc(100vh - 60px);
+    }
+  }
+  &.gray-content {
+    --background: var(--ion-color-gray4);
+  }
+}
+
+
+/*Desktop*/
+.plt-desktop .main-content {
+  --padding-bottom: 0;
+}
+
+/*Responsive layout*/
+@media (max-width: 991px) {
+  .hide-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .hide-xs {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .main-content {
+    --padding-bottom: 145px;
+  }
+}
+
+
